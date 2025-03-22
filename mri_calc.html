@@ -1,0 +1,313 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MRI Progressive supranuclear palsy calculator</title>
+
+<style>
+        /* Definizione delle variabili CSS */
+        :root {
+            --color-bg: #FFFFFF;
+            --color-text-main: #000000;
+            --color-text-header: #000000;
+            --color-primary: #FFFF00;
+            --wrapper-height: 87vh;
+            --image-max-width: 300px;
+            --image-margin: 3rem;
+            --font-family: "HK Grotesk", sans-serif;
+            --font-family-header: "HK Grotesk", sans-serif;
+        }
+
+        /* Reset di base */
+        * {
+            box-sizing: border-box;
+        }
+        [hidden] {
+            display: none !important;
+        }
+
+      
+    </style>
+  
+</head>
+
+
+<select id="language-selector" style="font-size: 16px; padding: 10px 16px; border-radius: 8px;">
+    <option value="en">English</option>
+    <option value="it">Italiano</option>
+    <option value="es">Español</option>
+    <option value="fr">Français</option>
+    <option value="deu">Deutsch</option>
+    <option value="ch">简体中文</option>
+    <option value="jap">日本語</option>
+    <option value="rus">Русский</option>
+    <option value="arabo">عربي</option> 
+</select>
+
+  
+  
+
+  <body>
+    <p id="description">Choose your language from the menu above.</p>
+    <h2 id="welcome"> Welcome to the MRI Progressive supranuclear palsy calculator!</h2>
+
+    
+<div class="container">    
+  <form id="myForm">
+    
+    <div class="form-group">
+    <label for="var1">DMPI:</label>
+    <input type="number" id="var1" name="var1" min="1" max="15" step="0.01" required><br><br>
+    </div>
+    
+    <div class="form-group">
+    <label for="var2" id="label_var2">Age:</label>
+    <input type="number" id="var2" name="var2" min="40" max="100" step="0.5" required><br><br>
+    </div>
+    
+    <div class="form-group">
+    <label for="var3" id="label_var3">Sex:</label>
+    <input type="number" id="var3" name="var3" min="0" max="1" step="1" required><br><br>
+    </div>
+  
+     </form>
+
+  
+  <div class="image-container">
+    <img src="https://cdn.glitch.global/54ce5e17-9ea5-4810-be13-ede1f7daa4b7/brain.png?v=1740596137064" 
+       alt="brain" id="brain-img">
+  </div>
+</div>
+
+    <p id="note_sex">Note for sex: Male = 1, Female = 0</p>
+  
+    <button type="button" onclick="Calcola()" style="background-color: red; border-color: black; border: 1.5px solid #000000; color: white; font-size: 19px; padding: 15px 20px; border-radius: 8px;" id="button"> Calculate Probability of PSP </button>
+ 
+    
+<p id="result"></p>
+<p id="error-message" style="color: red; font-weight: bold;"></p>
+
+<script>
+function Calcola() {
+    const var1 = parseFloat(document.getElementById('var1').value);
+    const var2 = parseFloat(document.getElementById('var2').value);
+    const var3 = parseFloat(document.getElementById('var3').value);
+    const errorMessage = document.getElementById('error-message');
+    const resultText = document.getElementById('result');
+    
+    // Get selected language
+    const selectedLang = document.getElementById("language-selector").value;
+    const translation = translations[selectedLang] || translations["en"]; // Default to English
+  
+    // Validation
+    if (isNaN(var1) || var1 < 1 || var1 > 15) {
+        errorMessage.innerText = translation.errors.var1;
+        return;
+    }
+    if (isNaN(var2) || var2 < 40 || var2 > 100) {
+        errorMessage.innerText = translation.errors.var2;
+        return;
+    }
+    if (isNaN(var3) || var3 < 0 || var3 > 1 || !Number.isInteger(var3)) {  
+        errorMessage.innerText = translation.errors.var3_decimal;  
+        return;
+    }
+
+    // Clear error
+    errorMessage.innerText = "";
+
+    // Calculate LP
+    const LP = 16.287 - 1.787 * var1 - 0.026 * var2 - 0.453 * var3;
+    
+    // Calculate probability
+    const prob = 1 / (1 + Math.exp(-LP));
+  
+    // Show result
+    resultText.innerText = `${translation.result}: ${(prob * 100).toFixed(2)}%`;
+}
+
+// Translations
+const translations = {
+    en: {
+        description: "Choose your language from the menu above.",
+        note_sex: "Note for sex: Male = 1, Female = 0",
+        welcome: "Welcome to the MRI Progressive Supranuclear Palsy (PSP) Calculator!",
+        var2: "Age",
+        var3: "Sex",
+        button: "Calculate Probability of PSP",
+        result: "The probability for PSP rather than other degenerative parkinsonian syndromes is",
+        errors: {
+            var1: "Error: DMPI must be between 1 and 15.",
+            var2: "Error: Age must be between 40 and 100.",
+            var3: "Error: Sex must be either 0 (Female) or 1 (Male).",
+            var3_decimal: "Error: Sex must be an integer (0 for Female, 1 for Male)."
+        }  
+    },
+    it: {
+        description: "Scegli la tua lingua dal menu in alto.",
+        note_sex: "Nota per il sesso: Maschio = 1, Femmina = 0",
+        welcome: "Benvenuto nel calcolatore MRI per la paralisi sopranucleare progressiva (PSP)!",
+        var2: "Età",
+        var3: "Sesso",
+        button: "Calcola la Probabilità di PSP",
+        result: "La probabilità di PSP piuttosto che altre sindromi parkinsoniane degenerative è",
+        errors: {
+            var1: "Errore: DMPI deve essere compreso tra 1 e 15.",
+            var2: "Errore: L'età deve essere compresa tra 40 e 100.",
+            var3: "Errore: Il sesso deve essere 0 (Femmina) o 1 (Maschio).",
+            var3_decimal: "Errore: Il sesso deve essere un numero intero pari a 0 (Femmina) o 1 (Maschio)."
+        }
+    }
+};
+
+// Language Change Function
+function changeLanguage() {
+    let selectedLang = document.getElementById("language-selector").value;
+
+    if (translations[selectedLang]) {
+        document.getElementById("description").textContent = translations[selectedLang].description;
+        document.getElementById("welcome").textContent = translations[selectedLang].welcome;
+        document.getElementById("note_sex").textContent = translations[selectedLang].note_sex;
+        document.getElementById("label_var2").textContent = translations[selectedLang].var2 + ":";
+        document.getElementById("label_var3").textContent = translations[selectedLang].var3 + ":";
+        document.getElementById("button").textContent = translations[selectedLang].button;
+    }
+}
+
+// Adjust Image Position
+function adjustImagePosition() {
+    let brainImg = document.getElementById("brain-img");
+    let mainText = document.querySelector(".content");
+
+    let textHeight = mainText ? mainText.offsetHeight : 0;
+    brainImg.style.marginTop = (textHeight * 0.1) + "px";
+}
+
+// Event Listeners
+document.getElementById("language-selector").addEventListener("change", changeLanguage);
+document.getElementById("language-selector").addEventListener("change", adjustImagePosition);
+
+// Run on load
+window.onload = adjustImagePosition;
+window.onresize = adjustImagePosition;
+</script>
+
+<style>   
+    /* Stili per il corpo della pagina */
+        body {
+            font-family: var(--font-family);
+            background-color: var(--color-bg);
+            margin: 10px;
+            padding: 0;
+        }
+
+        /* Contenitore principale */
+        .container {
+            /*border: 2px solid black; /* Bordo nero */
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            gap: 0px;
+            max-width: 500px;
+            flex-wrap: wrap;
+            margin: 10px;
+        }
+
+        /* Stili per il form */
+        #myForm {
+            
+            margin: 10px;
+            padding: 0;
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .form-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .form-group label {
+            width: 90px;
+            text-align: left;
+        }
+
+        .form-group input {
+            width: 100px;
+            height: 40px;
+            font-size: 16px;
+            padding: 5px;
+            border: 2px solid #cccccc;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        /* Stili per il bottone */
+        .btn {
+            font-family: var(--font-family);
+            padding: 0.75rem 1rem;
+            font-size: 1.1rem;
+            font-weight: 500;
+            cursor: pointer;
+            background: #FFFFFF;
+            border: 1px solid #000000;
+            border-radius: 4px;
+            text-decoration: none;
+            color: #000000;
+            white-space: nowrap;
+        }
+
+        .btn:hover {
+            background-color: var(--color-primary);
+        }
+
+        /* Contenitore dell'immagine */
+        .image-container {
+            /*border: 2px solid red; */
+            margin-left: 20px;
+            max-width: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .image-container img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        /* Media Query per schermi piccoli */
+        @media screen and (max-width: 600px) {
+            .container {
+                flex-direction: row;
+                align-items: center;
+                justify-content: flex-start;
+            }
+
+            #myForm {
+                flex: 0 1 45%;
+                min-width: 150px;
+            }
+
+            .image-container {
+                flex: 0 1 40%;
+                min-width: 100px;
+            }
+
+            .image-container img {
+                max-width: 250px;
+            }
+        }
+    </style>  
+
+  </body>
+  
+  
+</html>
+
