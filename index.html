@@ -28,8 +28,6 @@
         [hidden] {
             display: none !important;
         }
-
-      
     </style>
   
 </head>
@@ -130,35 +128,140 @@ function Calcola() {
 }
 
 // Translations
-const translations = {
-    en: {
-        description: "Choose your language from the menu above.",
-        note_sex: "Note for sex: Male = 1, Female = 0",
-        welcome: "Welcome to the MRI Progressive Supranuclear Palsy (PSP) Calculator!",
-        var2: "Age",
-        var3: "Sex",
-        button: "Calculate Probability of PSP",
-        result: "The probability for PSP rather than other degenerative parkinsonian syndromes is",
-        errors: {
-            var1: "Error: DMPI must be between 1 and 15.",
-            var2: "Error: Age must be between 40 and 100.",
-            var3: "Error: Sex must be either 0 (Female) or 1 (Male).",
-            var3_decimal: "Error: Sex must be an integer (0 for Female, 1 for Male)."
-        }  
-    },
-    it: {
-        description: "Scegli la tua lingua dal menu in alto.",
-        note_sex: "Nota per il sesso: Maschio = 1, Femmina = 0",
-        welcome: "Benvenuto nel calcolatore MRI per la paralisi sopranucleare progressiva (PSP)!",
-        var2: "Età",
-        var3: "Sesso",
-        button: "Calcola la Probabilità di PSP",
-        result: "La probabilità di PSP piuttosto che altre sindromi parkinsoniane degenerative è",
-        errors: {
+    const translations = {
+        it: {
+            description: "Scegli la tua lingua dal menu in alto.",
+            note_sex: "Nota per il sesso: Maschio = 1, Femmina = 0",
+            welcome: "Benvenuto nel calcolatore MRI per la paralisi sopranucleare progressiva (PSP)!",
+            var2: "Età",
+            var3: "Sesso",
+            button: "Calcola la Probabilità di PSP",
+            result: "La probabilità di PSP piuttosto che altre sindromi parkinsoniane degenerative è",
+            errors: {
             var1: "Errore: DMPI deve essere compreso tra 1 e 15.",
             var2: "Errore: L'età deve essere compresa tra 40 e 100.",
             var3: "Errore: Il sesso deve essere 0 (Femmina) o 1 (Maschio).",
             var3_decimal: "Errore: Il sesso deve essere un numero intero pari a 0 (Femmina) o 1 (Maschio)."
+            }
+        },
+        en: {
+            description: "Choose your language from the menu above.",
+            note_sex: "Note for sex: Male = 1, Female = 0",
+            welcome: "Welcome to the MRI Progressive supranuclear palsy (PSP) calculator!",
+            var2: "Age",
+            var3: "Sex",
+            button: "Calculate the Probability of PSP",
+            result: "The probability for PSP rather than other degenerative parkinsonian syndromes is",
+            errors: {
+            var1: "Error: DMPI must be between 1 and 15.",
+            var2: "Error: Age must be between 40 and 100.",
+            var3: "Error: Sex must be either 0 (Female) or 1 (Male).",
+            var3_decimal: "Error: Sex must be an integer value of 0 (Female) or 1 (Male)."
+            }  
+        },
+        es: {
+            description: "Elige tu idioma en el menú de arriba.",
+            note_sex: "Nota sobre el sexo: Hombre = 1, Mujer = 0",
+            welcome: "Bienvenido al calculador de MRI para la parálisis supranuclear progresiva (PSP)!",
+            var2: "Edad",
+            var3: "Sexo",
+            button: "Calcular la probabilidad de PSP",
+            result: "La probabilidad de PSP en lugar de otros síndromes parkinsonianos degenerativos es",
+            errors: {
+            var1: "Error: DMPI debe estar entre 1 y 15.",
+            var2: "Error: La edad debe estar entre 40 y 100.",
+            var3: "Error: El sexo debe ser 0 (Mujer) o 1 (Hombre).",
+            var3_decimal: "Error: El sexo debe ser un número entero igual a 0 (Mujer) o 1 (Hombre)."
+            }
+        },
+        fr: {
+            description: "Choisissez votre langue dans le menu ci-dessus.",
+            note_sex: "Remarque sur le sexe : Homme = 1, Femme = 0",
+            welcome: "Bienvenue sur le calculateur IRM de la paralysie supranucléaire progressive (PSP)!",
+            var2: "Âge",
+            var3: "Sexe",
+            button: "Calculer la probabilité de PSP",
+            result: "La probabilité de PSP plutôt que d'autres syndromes parkinsoniens dégénératifs est",
+            errors: {
+            var1: "Erreur : Le DMPI doit être compris entre 1 et 15.",
+            var2: "Erreur : L'âge doit être compris entre 40 et 100.",
+            var3: "Erreur : Le sexe doit être 0 (Femme) ou 1 (Homme).",
+            var3_decimal: "Erreur : Le sexe doit être un nombre entier égal à 0 (Femme) ou 1 (Homme)."
+            }
+        },
+        deu: {
+            description: "Wählen Sie Ihre Sprache aus dem obigen Menü.",
+            note_sex: "Hinweis zum Geschlecht: Männlich = 1, Weiblich = 0",
+            welcome: "Willkommen beim MRT-Rechner für progressiv supranukleäre Lähmung!",
+            var2: "Alter",
+            var3: "Geschlecht",
+            button: "Berechne die Wahrscheinlichkeit von progressiv supranukleäre Lähmung",
+            result: "Die Wahrscheinlichkeit für PSP anstelle anderer degenerativer parkinsonischer Syndrome beträgt",
+            errors: {
+            var1: "Fehler: DMPI muss zwischen 1 und 15 liegen.",
+            var2: "Fehler: Das Alter muss zwischen 40 und 100 liegen.",
+            var3: "Fehler: Das Geschlecht muss entweder 0 (Weiblich) oder 1 (Männlich) sein.",
+            var3_decimal: "Fehler: Das Geschlecht muss eine ganze Zahl sein: 0 (Weiblich) oder 1 (Männlich)."
+            }     
+        },
+        ch: {
+            description: "从上方菜单中选择您的语言。",
+            note_sex: "性别说明：男性 = 1，女性 = 0",
+            welcome: "欢迎使用进行性核上性麻痹计算器！",
+            var2: "年龄",
+            var3: "性别",
+            button: "计算进行性核上性麻痹的概率",
+            result: "进行性核上性麻痹而非其他退行性帕金森综合征的概率为",
+            errors: {
+            var1: "错误: DMPI 必须在 1 到 15 之间。",
+            var2: "错误: 年龄必须在 40 到 100 之间。",
+            var3: "错误: 性别必须是 0（女性）或 1（男性）。",
+            var3_decimal: "错误: 性别必须是整数值：0（女性）或 1（男性）。"
+            }
+        },
+        jap: {
+            description: "上のメニューから言語を選択してください。",
+            note_sex: "性別の注意: 男性 = 1、女性 = 0",
+            welcome: "進行性核上性麻痺の計算機へようこそ！",
+            var2: "年齢",
+            var3: "性別",
+            button: "進行性核上性麻痺の確率を計算する",
+            result: "他の変性性パーキンソン症候群ではなく進行性核上性麻痺の確率は",
+            errors: {
+            var1: "エラー: DMPI は 1 から 15 の間でなければなりません。",
+            var2: "エラー: 年齢は 40 から 100 の間でなければなりません。",
+            var3: "エラー: 性別は 0（女性）または 1（男性）でなければなりません。",
+            var3_decimal: "エラー: 性別は整数値の 0（女性）または 1（男性）でなければなりません。"
+            }
+        },
+        rus: {
+            description: "Выберите ваш язык в меню выше.",
+            note_sex: "Примечание по полу: Мужчина = 1, Женщина = 0",
+            welcome: "Добро пожаловать в калькулятор МРТ прогрессирующего надъядерного паралича!",
+            var2: "Возраст",
+            var3: "Пол",
+            button: "Рассчитать вероятность прогрессирующего надъядерного паралича",
+            result: "Вероятность ПСП по сравнению с другими дегенеративными паркинсоническими синдромами составляет",
+            errors: {
+            var1: "Ошибка: DMPI должен быть в пределах от 1 до 15.",
+            var2: "Ошибка: Возраст должен быть в пределах от 40 до 100.",
+            var3: "Ошибка: Пол должен быть 0 (Женщина) или 1 (Мужчина).",
+            var3_decimal: "Ошибка: Пол должен быть целым числом: 0 (Женщина) или 1 (Мужчина)."
+          }
+        },
+        arabo: {
+            description: "اختر لغتك من القائمة أعلاه.",
+            note_sex: "ملاحظة بشأن الجنس: ذكر = 1، أنثى = 0",
+            welcome: "مرحبًا بك في حاسبة التصوير بالرنين المغناطيسي لشلل فوق النوى التقدمي!",
+            var2: "العمر",
+            var3: "الجنس",
+            button: "حساب احتمال الشلل فوق النووي التدريجي",
+            result: "احتمال الإصابة بالشلل فوق النووي التقدمي بدلاً من المتلازمات التنكسية الأخرى هو",
+            errors: {
+            var1: "خطأ: يجب أن يكون DMPI بين 1 و 15.",
+            var2: "خطأ: يجب أن يكون العمر بين 40 و 100.",
+            var3: "خطأ: يجب أن يكون الجنس 0 (أنثى) أو 1 (ذكر).",
+            var3_decimal: "خطأ: يجب أن يكون الجنس عددًا صحيحًا يساوي 0 (أنثى) أو 1 (ذكر)."
         }
     }
 };
@@ -177,6 +280,11 @@ function changeLanguage() {
     }
 }
 
+// Event Listeners
+document.getElementById("language-selector").addEventListener("change", changeLanguage);
+document.getElementById("language-selector").addEventListener("change", adjustImagePosition);
+
+
 // Adjust Image Position
 function adjustImagePosition() {
     let brainImg = document.getElementById("brain-img");
@@ -185,11 +293,7 @@ function adjustImagePosition() {
     let textHeight = mainText ? mainText.offsetHeight : 0;
     brainImg.style.marginTop = (textHeight * 0.1) + "px";
 }
-
-// Event Listeners
-document.getElementById("language-selector").addEventListener("change", changeLanguage);
-document.getElementById("language-selector").addEventListener("change", adjustImagePosition);
-
+    
 // Run on load
 window.onload = adjustImagePosition;
 window.onresize = adjustImagePosition;
@@ -304,6 +408,48 @@ window.onresize = adjustImagePosition;
                 max-width: 250px;
             }
         }
+
+    
+.btn--remix img {
+  margin-right: 0.5rem;
+}
+.btn--remix:hover {
+  background-color: #D0FFF1;
+}
+
+/* Navigation grid */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem auto 0;
+  padding: 1rem 0 0.75rem 0;
+  width: 100%;
+  flex-wrap: wrap;
+  border-top: 4px solid #ffffff;
+}
+
+.footer a:not(.btn--remix):link,
+a:not(.btn--remix):visited {
+  font-family: HK Grotesk;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.1rem;
+  color: #000;
+  text-decoration: none;
+  border-style: none;
+}
+.footer a:hover {
+  background: var(--color-primary);
+}
+
+.footer .links {
+  padding: 0.5rem 1rem 1.5rem;
+  white-space: nowrap;
+}
+
+.divider {
+  padding: 0 1rem;
+}
     </style>  
 
   </body>
