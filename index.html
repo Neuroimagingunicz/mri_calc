@@ -370,7 +370,7 @@ window.onresize = adjustImagePosition;
             gap: 0px;
             max-width: 500px;
             flex-wrap: wrap;
-            margin: -20px;
+            margin: 0px;
         }
 
         /* Stili per il form */
@@ -474,6 +474,16 @@ window.onresize = adjustImagePosition;
             }
         }
 
+    
+  /* Rimuove le freccine dai campi number */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"] {
+    -moz-appearance: textfield;
+}
     
 .btn--remix img {
   margin-right: 0.5rem;
