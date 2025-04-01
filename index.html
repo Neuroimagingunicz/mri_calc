@@ -93,7 +93,7 @@
     
     
     
-    
+    <p id="note_measures">A and B measures must be in millimeters</p>
     <p id="note_sex">Note for sex: Male = 1, Female = 0</p>
   
     <button type="button" onclick="Calcola()" style="background-color: red; border-color: black; border: 1.5px solid #000000; color: white; font-size: 19px; padding: 15px 20px; border-radius: 8px;" id="button"> Calculate Probability of PSP </button>
@@ -177,6 +177,7 @@ function Calcola() {
         it: {
             description: "Scegli la tua lingua dal menu in alto.",
             note_sex: "Nota per il sesso: Maschio = 1, Femmina = 0",
+            note_measures:"Le misure A e B devono essere in millimetri",
             welcome: "Benvenuto nel calcolatore MRI per la paralisi sopranucleare progressiva (PSP)!",
             var1: "Età",
             var2: "Sesso",
@@ -196,6 +197,7 @@ function Calcola() {
         en: {
             description: "Choose your language from the menu above.",
             note_sex: "Note for sex: Male = 1, Female = 0",
+            note_measures:"A and B measures must be in millimeters",
             welcome: "Welcome to the MRI Progressive supranuclear palsy (PSP) calculator!",
             var1: "Age",
             var2: "Sex",
@@ -215,6 +217,7 @@ function Calcola() {
         es: {
             description: "Elige tu idioma en el menú de arriba.",
             note_sex: "Nota sobre el sexo: Hombre = 1, Mujer = 0",
+            note_measures:"Las medidas A y B deben estar en milímetros",
             welcome: "Bienvenido al calculador de MRI para la parálisis supranuclear progresiva (PSP)!",
             var1: "Edad",
             var2: "Sexo",
@@ -234,6 +237,7 @@ function Calcola() {
         fr: {
             description: "Choisissez votre langue dans le menu ci-dessus.",
             note_sex: "Remarque sur le sexe : Homme = 1, Femme = 0",
+            note_measures:"Les mesures A et B doivent être en millimètres",
             welcome: "Bienvenue sur le calculateur IRM de la paralysie supranucléaire progressive (PSP)!",
             var1: "Âge",
             var2: "Sexe",
@@ -253,6 +257,7 @@ function Calcola() {
         deu: {
             description: "Wählen Sie Ihre Sprache aus dem obigen Menü.",
             note_sex: "Hinweis zum Geschlecht: Männlich = 1, Weiblich = 0",
+            note_measures:"Die Messungen A und B müssen in Millimetern angegeben werden",
             welcome: "Willkommen beim MRT-Rechner für progressiv supranukleäre Lähmung!",
             var1: "Alter",
             var2: "Geschlecht",
@@ -272,6 +277,7 @@ function Calcola() {
         ch: {
             description: "从上方菜单中选择您的语言。",
             note_sex: "性别说明：男性 = 1，女性 = 0",
+            note_measures:"A 和 B 测量必须以毫米为单位",
             welcome: "欢迎使用进行性核上性麻痹计算器！",
             var1: "年龄",
             var2: "性别",
@@ -291,6 +297,7 @@ function Calcola() {
         jap: {
             description: "上のメニューから言語を選択してください。",
             note_sex: "性別の注意: 男性 = 1、女性 = 0",
+            note_measures:"A と B 測定はミリメートル単位でなければなりません",
             welcome: "進行性核上性麻痺の計算機へようこそ！",
             var1: "年齢",
             var2: "性別",
@@ -310,6 +317,7 @@ function Calcola() {
         rus: {
             description: "Выберите ваш язык в меню выше.",
             note_sex: "Примечание по полу: Мужчина = 1, Женщина = 0",
+            note_measures:"Измерения A и B должны быть в миллиметрах",
             welcome: "Добро пожаловать в калькулятор МРТ прогрессирующего надъядерного паралича!",
             var1: "Возраст",
             var2: "Пол",
@@ -329,6 +337,7 @@ function Calcola() {
         arabo: {
             description: "اختر لغتك من القائمة أعلاه.",
             note_sex: "ملاحظة بشأن الجنس: ذكر = 1، أنثى = 0",
+            note_measures:"يجب أن تكون قياسات A و B بوحدات المليمتر"
             welcome: "مرحبًا بك في حاسبة التصوير بالرنين المغناطيسي لشلل فوق النوى التقدمي!",
             var1: "العمر",
             var2: "الجنس",
@@ -355,6 +364,7 @@ function changeLanguage() {
         document.getElementById("description").textContent = translations[selectedLang].description;
         document.getElementById("welcome").textContent = translations[selectedLang].welcome;
         document.getElementById("note_sex").textContent = translations[selectedLang].note_sex;
+        document.getElementById("note_measures").textContent = translations[selectedLang].note_measures;
         document.getElementById("label_var1").textContent = translations[selectedLang].var1 + ":";
         document.getElementById("label_var2").textContent = translations[selectedLang].var2 + ":";
         document.getElementById("label_var3").textContent = translations[selectedLang].var3 + ":";
