@@ -58,7 +58,7 @@
     
     
     <div class="form-group">
-    <label for="var1" id="label_var2">Age:</label>
+    <label for="var1" id="label_var1">Age:</label>
     <input type="number" id="var1" name="var1" min="40" max="100" step="0.5" required><br><br>
     </div>
     
@@ -68,19 +68,19 @@
     </div>
 
     <div class="form-group">
-    <label for="var3">A measure:</label>
+    <label for="var3" id="label_var3">A measure:</label>
     <input type="number" id="var3" name="var3" min="3" max="18" step="0.01" required><br><br>
     </div>
 
     <div class="form-group">
-    <label for="var4">B measure:</label>
+    <label for="var4" id="label_var4">B measure:</label>
     <input type="number" id="var4" name="var4" min="1" max="15" step="0.01" required><br><br>
     </div>
      </form>
 
   
   <div class="image-container">
-      <img src="screenshot.png" alt="brain" id="brain-img"">
+      <img src="screenshot.png" alt="brain" id="brain-img">
 
   </div>
 </div>
@@ -325,7 +325,7 @@ function changeLanguage() {
         document.getElementById("description").textContent = translations[selectedLang].description;
         document.getElementById("welcome").textContent = translations[selectedLang].welcome;
         document.getElementById("note_sex").textContent = translations[selectedLang].note_sex;
-         document.getElementById("label_var1").textContent = translations[selectedLang].var1 + ":";
+        document.getElementById("label_var1").textContent = translations[selectedLang].var1 + ":";
         document.getElementById("label_var2").textContent = translations[selectedLang].var2 + ":";
         document.getElementById("label_var3").textContent = translations[selectedLang].var3 + ":";
         document.getElementById("label_var4").textContent = translations[selectedLang].var4 + ":";
@@ -370,7 +370,7 @@ window.onresize = adjustImagePosition;
             gap: 0px;
             max-width: 500px;
             flex-wrap: wrap;
-            margin: 10px;
+            margin: -20px;
         }
 
         /* Stili per il form */
@@ -385,14 +385,16 @@ window.onresize = adjustImagePosition;
         .form-group {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: -10px;
             margin-bottom: 10px;
+            
         }
 
         .form-group label {
             margin: 10px;
             width: 90px;
             text-align: left;
+            /*min-width: 90px; /* Impostare una larghezza minima per gli input su schermi più piccoli */
         }
 
         .form-group input {
@@ -403,6 +405,9 @@ window.onresize = adjustImagePosition;
             border: 2px solid #cccccc;
             border-radius: 5px;
             text-align: center;
+    
+}
+}
         }
 
         /* Stili per il bottone */
@@ -443,6 +448,7 @@ window.onresize = adjustImagePosition;
         /* Media Query per schermi piccoli */
         @media screen and (max-width: 600px) {
             .container {
+                
                 flex-direction: row;
                 align-items: center;
                 justify-content: flex-start;
@@ -453,6 +459,11 @@ window.onresize = adjustImagePosition;
                 min-width: 150px;
             }
 
+            .form-group label {
+                width: 90%; 
+                text-align: left;
+             }
+          
             .image-container {
                 flex: 0 1 40%;
                 min-width: 100px;
@@ -510,4 +521,3 @@ a:not(.btn--remix):visited {
   
   
 </html>
-
