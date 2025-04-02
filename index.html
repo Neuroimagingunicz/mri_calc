@@ -508,15 +508,25 @@ window.onresize = adjustImagePosition;
     .container {
         justify-content: flex-start; /* Mantiene il form sulla sinistra */
     }
-     
+
+
+     .image-container {
+                flex: 0 1 40%;
+                min-width: 150px;
+            }
+
       .image-container img {
-        max-width: 70%; /* Rimpicciolisce leggermente l'immagine */
+                max-width: 250px;
+            }
+      
+   /*   .image-container img {
+        max-width: 70%; 
         height: auto;
     }
 
     .image-container {
-        max-width: 100px; /* Restringe lo spazio assegnato all'immagine */
-    }
+        max-width: 100px; 
+    } */
 }
   
   
