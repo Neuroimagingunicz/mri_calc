@@ -408,7 +408,7 @@ window.onresize = adjustImagePosition;
     
         /* Contenitore principale */
         .container {
-            border: 2px solid black;
+          /*  border: 2px solid black; */
             display: flex;
             align-items: center;
             justify-content: flex-start;
@@ -420,7 +420,7 @@ window.onresize = adjustImagePosition;
 
         /* Stili per il form */
         #myForm {
-            border: 2px solid black; 
+          /*  border: 2px solid green; */
             margin: 10px;
             padding: 0;
             flex: 1;
@@ -429,6 +429,7 @@ window.onresize = adjustImagePosition;
  
   
  .form-group {
+   /* border: 2px solid blue; */
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -482,7 +483,7 @@ window.onresize = adjustImagePosition;
 
         /* Contenitore dell'immagine */
         .image-container {
-            border: 2px solid red;
+         /*   border: 2px solid red; */
             margin-left: 20px;
             max-width: 200px;
             display: center;
@@ -500,25 +501,43 @@ window.onresize = adjustImagePosition;
   @media screen and (max-width: 600px) {
     .form-group {
         justify-content: flex-start; /* Allinea tutto a sinistra */
-        gap: 5px; /* Riduce lo spazio tra label e input */
+        gap: 0px; /* Riduce lo spazio tra label e input */
+        width: 75%; /* Restringe il container blu */
+
     }
 
+    
+    
+    #myForm {
+      flex: 0 1 auto; 
+      width: 80%; 
+
+        }
+    
     .form-group label {
         width: 100px; /* Manteniamo la larghezza fissa */
+
+
+ 
     }
 
     .form-group input {
-        width: 90px; /* Rimpiccioliamo leggermente i box */
+        width: 35%; /* Rimpiccioliamo leggermente i box */
     }
 
     .container {
         justify-content: flex-start; /* Mantiene il form sulla sinistra */
+        flex-direction: row; 
+        flex-wrap: nowrap; /* Evita che gli elementi vadano a capo */
+        align-items: center;
+        width: auto;
+
     }
 
 
      .image-container {
                 flex: 0 1 40%;
-                min-width: 150px;
+                min-width: 100px;
             }
 
       .image-container img {
