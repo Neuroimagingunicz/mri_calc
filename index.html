@@ -511,32 +511,44 @@ window.onresize = adjustImagePosition;
     }
 
 
-
-  #myForm {
+    #myForm {
   flex: 0 1 auto;
-  width: max-content; /* Adatta la larghezza al contenuto */
-  min-width: 200px; /* Impedisce che diventi troppo stretto */
+  width: max-content; 
+  min-width: 200px;
+  padding: 0;
 }
     
     .form-group label {
         width: 100px; /* Manteniamo la larghezza fissa */
 
+
+ 
     }
 
     .form-group input {
         width: 35%; /* Rimpiccioliamo leggermente i box */
     }
 
-  
+    
     .container {
-        justify-content: flex-start; 
-        flex-direction: row; 
-        flex-wrap: nowrap; 
+
+
+        justify-content: flex-start;
         align-items: center;
         width: auto;
+        flex-direction: row; 
+        flex-wrap: nowrap; 
+      
+        display: flex;
+        gap: 0px; /* Elimina spazio extra tra form e immagine */
+        padding: 0;
+        margin: 0;
 
     }
- /*
+
+    
+  
+    /*  
     .container {
   display: flex;
   justify-content: space-between; 
@@ -544,20 +556,26 @@ window.onresize = adjustImagePosition;
   width: auto;
   gap: 10px; 
 }
- */  
+
+*/
+    
     .image-container {
-  flex: 1; 
-  max-width: 50%; 
+  flex: 1; /* Occupa tutto lo spazio disponibile accanto al form */
+  max-width: 50%; /* Non supera metà dello schermo */
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0; /* Elimina spazio extra */
+  padding: 0;
 }
 
 .image-container img {
-  width: 100%; 
-  max-width: 100%; 
+  width: 100%; /* Occupa tutto il suo contenitore */
+  max-width: none; /* Non esce mai dal container */
   height: auto;
+
 }
+    
 
 
       
