@@ -95,10 +95,10 @@
     <p id="note_measures">A and B measures must be in millimeters</p>
     <p id="note_sex">Note for sex: Male = 1, Female = 0</p>
   
-    <button type="button" onclick="Calcola()" style="background-color: red; border-color: black; border: 1.5px solid #000000; color: white; font-size: 19px; padding: 15px 20px; border-radius: 8px;" id="button"> Calculate Probability of PSP </button>
+    <button type="button" onclick="Calcola()" style="background-color: red; border-color: black; border: 1.5px solid #000000; color: white; font-weight: bold; font-size: 19px; padding: 15px 20px; border-radius: 8px;" id="button"> Calculate Probability of PSP </button>
  
     
-<p id="result"></p>
+<p id="result" style="color: black; font-weight: bold;"></p>
 <p id="error-message" style="color: red; font-weight: bold;"></p>
 
 <script>
@@ -166,7 +166,7 @@ function Calcola() {
     const prob = 1 / (1 + Math.exp(-LP));
   
     // Show result
-    resultText.innerHTML = `${translation.result}: <strong>${(prob * 100).toFixed(2)}%</strong>`;
+    resultText.innerHTML = `${translation.result}:  <span style="color: red;">${(prob * 100).toFixed(2)}%</span>`;
 
 
 }
@@ -406,7 +406,7 @@ window.onresize = adjustImagePosition;
         }
     
         #altro {
-            margin-left: 16px; /* Spazio rispetto al lato sinistro (come le etichette sopra) */
+            margin-left: 15px; /* Spazio rispetto al lato sinistro (come le etichette sopra) */
             font-weight: bold; /* Grassetto */
             color: red; /* Colore rosso */
         }
