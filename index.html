@@ -87,9 +87,9 @@
   </div>
 </div>
 
-    <div class="form-group">
+
     <p id="altro">DMPI =</p>
-    </div>
+
     
     
     <p id="note_measures">A and B measures must be in millimeters</p>
@@ -399,15 +399,22 @@ window.onresize = adjustImagePosition;
             margin: 10px;
             padding: 0;
         }
+    
         #welcome2 {
             font-size: 20px; /* Adatta la dimensione a seconda delle tue esigenze */
             color: red;
         }
-
+    
+        #altro {
+            margin-left: 17px; /* Spazio rispetto al lato sinistro (come le etichette sopra) */
+            font-weight: bold; /* Grassetto */
+            color: red; /* Colore rosso */
+        }
 
     
         /* Contenitore principale */
-        .container {
+        
+            .container {
           /*  border: 2px solid black; */
             display: flex;
             align-items: center;
@@ -454,11 +461,7 @@ window.onresize = adjustImagePosition;
             text-align: center;
     
         }
-        #altro {
-            margin-left: 20px; /* Spazio rispetto al lato sinistro (come le etichette sopra) */
-            font-weight: bold; /* Grassetto */
-            color: red; /* Colore rosso */
-        }
+
     }
 }
 
@@ -481,9 +484,10 @@ window.onresize = adjustImagePosition;
             background-color: var(--color-primary);
         }
 
-        /* Contenitore dell'immagine */
+
+
         .image-container {
-         /*   border: 2px solid red; */
+
             margin-left: 20px;
             max-width: 200px;
             display: center;
@@ -506,8 +510,58 @@ window.onresize = adjustImagePosition;
 
     }
 
+
+
+  #myForm {
+  flex: 0 1 auto;
+  width: max-content; /* Adatta la larghezza al contenuto */
+  min-width: 200px; /* Impedisce che diventi troppo stretto */
+}
     
-    
+    .form-group label {
+        width: 100px; /* Manteniamo la larghezza fissa */
+
+    }
+
+    .form-group input {
+        width: 35%; /* Rimpiccioliamo leggermente i box */
+    }
+
+    /*
+    .container {
+        justify-content: flex-start; 
+        flex-direction: row; 
+        flex-wrap: nowrap; 
+        align-items: center;
+        width: auto;
+
+    }
+*/
+    .container {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  width: auto;
+  gap: 10px; 
+}
+  
+    .image-container {
+  flex: 1; 
+  max-width: 50%; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-container img {
+  width: 100%; 
+  max-width: 100%; 
+  height: auto;
+}
+
+
+      
+    /* versione precedente
     #myForm {
       flex: 0 1 auto; 
       width: 80%; 
@@ -515,20 +569,20 @@ window.onresize = adjustImagePosition;
         }
     
     .form-group label {
-        width: 100px; /* Manteniamo la larghezza fissa */
+        width: 100px; 
 
 
  
     }
 
     .form-group input {
-        width: 35%; /* Rimpiccioliamo leggermente i box */
+        width: 35%; 
     }
 
     .container {
-        justify-content: flex-start; /* Mantiene il form sulla sinistra */
+        justify-content: flex-start; 
         flex-direction: row; 
-        flex-wrap: nowrap; /* Evita che gli elementi vadano a capo */
+        flex-wrap: nowrap; 
         align-items: center;
         width: auto;
 
@@ -549,40 +603,10 @@ window.onresize = adjustImagePosition;
         height: auto;
     }
 
-    .image-container {
-        max-width: 100px; 
-    } */
+    */
 }
   
-  
-        /* Media Query per schermi piccoli */
-        /*@media screen and (max-width: 600px) {
-            .container {
-                
-                flex-direction: row;
-                align-items: center;
-                justify-content: flex-start;
-            }
 
-            #myForm {
-                flex: 0 1 45%;
-                min-width: 150px;
-            }
-
-            .form-group label {
-                width: 90%; 
-                text-align: left;
-             }
-          
-            .image-container {
-                flex: 0 1 40%;
-                min-width: 150px;
-            }
-
-            .image-container img {
-                max-width: 250px;
-            }
-        }*/
 
     
   /* Rimuove le freccine dai campi number */
