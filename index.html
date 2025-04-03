@@ -11,8 +11,8 @@
         :root {
             --color-bg: #FFFFFF;
             --color-text-main: #000000;
-            --color-text-header: #000000;
             --color-primary: #FFFF00;
+            --color-text-header: #000000;
             --wrapper-height: 87vh;
             --image-max-width: 300px;
             --image-margin: 3rem;
@@ -156,7 +156,7 @@ function Calcola() {
   
     // Update the 'altro' element with the calculated DMPI value
 
-    altroText.innerHTML = `DMPI = <strong style="color: red;">${DMPI}</strong>`;
+    altroText.innerHTML = `DMPI = <strong style="color: red;font-size: 20px;">${DMPI}</strong>`;
 
     
     // Calculate LP
@@ -166,7 +166,7 @@ function Calcola() {
     const prob = 1 / (1 + Math.exp(-LP));
   
     // Show result
-    resultText.innerHTML = `${translation.result}:  <span style="color: red;">${(prob * 100).toFixed(2)}%</span>`;
+    resultText.innerHTML = `${translation.result}:  <span style="color: red; font-size: 22px;">${(prob * 100).toFixed(2)}%</span>`;
 
 
 }
@@ -396,7 +396,8 @@ window.onresize = adjustImagePosition;
         body {
             font-family: var(--font-family);
             background-color: var(--color-bg);
-            margin: 10px;
+            line-height: 1.1; /* Valore più basso avvicina le righe */
+            margin: 0px 10px 0px;
             padding: 0;
         }
     
@@ -406,9 +407,10 @@ window.onresize = adjustImagePosition;
         }
     
         #altro {
-            margin-left: 15px; /* Spazio rispetto al lato sinistro (come le etichette sopra) */
+            margin-left: 10px; /* Spazio rispetto al lato sinistro (come le etichette sopra) */
             font-weight: bold; /* Grassetto */
             color: red; /* Colore rosso */
+            font-size: 20px;
         }
 
     
@@ -423,6 +425,7 @@ window.onresize = adjustImagePosition;
             max-width: 500px;
             flex-wrap: wrap;
             margin: 0px;
+            margin-bottom: -15px;
         }
 
         /* Stili per il form */
@@ -538,11 +541,11 @@ window.onresize = adjustImagePosition;
         width: auto;
         flex-direction: row; 
         flex-wrap: nowrap; 
-      
         display: flex;
         gap: 0px; /* Elimina spazio extra tra form e immagine */
         padding: 0;
         margin: 0;
+        margin-bottom: -15px;
 
     }
 
