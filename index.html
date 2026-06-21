@@ -48,6 +48,22 @@
   
 
   <body>
+      <!-- Info button -->
+  <button id="info-button" type="button" onclick="openInfoBox()">i</button>
+
+  <!-- Info modal -->
+  <div id="info-overlay" onclick="closeInfoBox(event)">
+    <div id="info-box">
+      <button id="info-close" type="button" onclick="closeInfoBox()">×</button>
+      <h3 id="info-title">Information</h3>
+      <p id="info-text">
+        This calculator estimates the probability of Progressive Supranuclear Palsy (PSP)
+        rather than other degenerative parkinsonian syndromes using age, sex, and MRI-based
+        A and B measures.
+      </p>
+    </div>
+  </div>
+      
     <p id="description">Choose your language from the menu above.</p>
     <h2 id="welcome"> Welcome to the MRI Progressive supranuclear palsy (PSP) calculator!</h2>
     <h2 id="welcome2"> DMPI = Dual-line midbrain PSP index</h2>
@@ -185,6 +201,8 @@ function Calcola() {
             button: "Calcola la Probabilità di PSP",
             dmpi: "Dual-line midbrain PSP index (DMPI) =",
             result: "La probabilità di PSP piuttosto che altre sindromi parkinsoniane degenerative è",
+            info_title: "Informazioni",
+            info_text: "Tutte le informazioni sono disponibili nel manoscritto “Planimetric and Linear MRI Markers for Progressive Supranuclear Palsy Classification: A Large Multicohort International Study”, pubblicato su Radiology nel 2026 (doi: 10.1148/radiol.251394). In caso di dubbi contattare il corresponding author del manoscritto.",
             errors: {
             var1: "Errore: L'età deve essere compresa tra 40 e 100.",
             var2: "Errore: Il sesso deve essere 0 (Femmina) o 1 (Maschio).",
@@ -205,6 +223,8 @@ function Calcola() {
             button: "Calculate the Probability of PSP",
             dmpi: "Dual-line midbrain PSP index (DMPI) =",
             result: "The probability for PSP rather than other degenerative parkinsonian syndromes is",
+            info_title: "Information",
+            info_text: "All information is available in the manuscript “Planimetric and Linear MRI Markers for Progressive Supranuclear Palsy Classification: A Large Multicohort International Study”, published in Radiology in 2026 (doi: 10.1148/radiol.251394). For any questions, please contact the corresponding author of the manuscript.",
             errors: {
             var1: "Error: Age must be between 40 and 100.",
             var2: "Error: Sex must be either 0 (Female) or 1 (Male).",
@@ -213,6 +233,7 @@ function Calcola() {
             var4: "Error: B value must be a number between 1 and 15."
             }  
         },
+        
         es: {
             description: "Elige tu idioma en el menú de arriba.",
             note_sex: "Nota sobre el sexo: Hombre = 1, Mujer = 0",
@@ -225,6 +246,8 @@ function Calcola() {
             button: "Calcular la probabilidad de PSP",
             dmpi: "Dual-line midbrain PSP index (DMPI) =",
             result: "La probabilidad de PSP en lugar de otros síndromes parkinsonianos degenerativos es",
+            info_title: "Información",
+            info_text: "Toda la información está disponible en el manuscrito “Planimetric and Linear MRI Markers for Progressive Supranuclear Palsy Classification: A Large Multicohort International Study”, publicado en Radiology en 2026 (doi: 10.1148/radiol.251394). En caso de dudas, contacte con el autor de correspondencia del manuscrito.",
             errors: {
             var1: "Error: La edad debe estar entre 40 y 100.",
             var2: "Error: El sexo debe ser 0 (Mujer) o 1 (Hombre).",
@@ -233,6 +256,7 @@ function Calcola() {
             var4: "Error: A debe ser un número comprendido entre 1 y 15."
             }
         },
+        
         fr: {
             description: "Choisissez votre langue dans le menu ci-dessus.",
             note_sex: "Remarque sur le sexe : Homme = 1, Femme = 0",
@@ -245,6 +269,8 @@ function Calcola() {
             button: "Calculer la probabilité de PSP",
             dmpi: "Dual-line midbrain PSP index (DMPI) =",
             result: "La probabilité de PSP plutôt que d'autres syndromes parkinsoniens dégénératifs est",
+            info_title: "Informations",
+            info_text: "Toutes les informations sont disponibles dans le manuscrit “Planimetric and Linear MRI Markers for Progressive Supranuclear Palsy Classification: A Large Multicohort International Study”, publié dans Radiology en 2026 (doi: 10.1148/radiol.251394). En cas de doute, veuillez contacter l’auteur correspondant du manuscrit.",
             errors: {
             var1: "Erreur : L'âge doit être compris entre 40 et 100.",
             var2: "Erreur : Le sexe doit être 0 (Femme) ou 1 (Homme).",
@@ -253,6 +279,7 @@ function Calcola() {
             var4: "Erreur : A doit être un nombre compris entre 1 et 15."
             }
         },
+        
         deu: {
             description: "Wählen Sie Ihre Sprache aus dem obigen Menü.",
             note_sex: "Hinweis zum Geschlecht: Männlich = 1, Weiblich = 0",
@@ -265,6 +292,8 @@ function Calcola() {
             button: "Berechne die Wahrscheinlichkeit von progressiv supranukleäre Lähmung",
             dmpi: "Dual-line midbrain PSP index (DMPI) =",
             result: "Die Wahrscheinlichkeit für PSP anstelle anderer degenerativer parkinsonischer Syndrome beträgt",
+            info_title: "Informationen",
+            info_text: "Alle Informationen sind im Manuskript “Planimetric and Linear MRI Markers for Progressive Supranuclear Palsy Classification: A Large Multicohort International Study” verfügbar, das 2026 in Radiology veröffentlicht wurde (doi: 10.1148/radiol.251394). Bei Fragen wenden Sie sich bitte an den korrespondierenden Autor des Manuskripts.",
             errors: {
             var1: "Fehler: Das Alter muss zwischen 40 und 100 liegen.",
             var2: "Fehler: Das Geschlecht muss entweder 0 (Weiblich) oder 1 (Männlich) sein.",
@@ -285,6 +314,8 @@ function Calcola() {
             button: "计算进行性核上性麻痹的概率",
             dmpi: "Dual-line midbrain PSP index (DMPI) =",
             result: "进行性核上性麻痹而非其他退行性帕金森综合征的概率为",
+            info_title: "信息",
+            info_text: "所有信息均可在手稿“Planimetric and Linear MRI Markers for Progressive Supranuclear Palsy Classification: A Large Multicohort International Study”中找到，该文于2026年发表于 Radiology（doi: 10.1148/radiol.251394）。如有疑问，请联系该手稿的通讯作者。",
             errors: {
             var1: "错误: 年龄必须在 40 到 100 之间。",
             var2: "错误: 性别必须是 0（女性）或 1（男性）。",
@@ -305,6 +336,8 @@ function Calcola() {
             button: "進行性核上性麻痺の確率を計算する",
             dmpi: "Dual-line midbrain PSP index (DMPI) =",
             result: "他の変性性パーキンソン症候群ではなく進行性核上性麻痺の確率は",
+            info_title: "情報",
+            info_text: "すべての情報は、2026年に Radiology に掲載された論文 “Planimetric and Linear MRI Markers for Progressive Supranuclear Palsy Classification: A Large Multicohort International Study”（doi: 10.1148/radiol.251394）に記載されています。ご不明な点がある場合は、論文の責任著者にお問い合わせください。",
             errors: {
             var1: "エラー: 年齢は 40 から 100 の間でなければなりません。",
             var2: "エラー: 性別は 0（女性）または 1（男性）でなければなりません。",
@@ -313,6 +346,7 @@ function Calcola() {
             var4: "エラー: A は 1 から 15 の間の数字でなければなりません。"
             }
         },
+        
         rus: {
             description: "Выберите ваш язык в меню выше.",
             note_sex: "Примечание по полу: Мужчина = 1, Женщина = 0",
@@ -325,6 +359,8 @@ function Calcola() {
             button: "Рассчитать вероятность прогрессирующего надъядерного паралича",
             dmpi: "Dual-line midbrain PSP index (DMPI) =",
             result: "Вероятность ПСП по сравнению с другими дегенеративными паркинсоническими синдромами составляет",
+            info_title: "Информация",
+            info_text: "Вся информация доступна в рукописи “Planimetric and Linear MRI Markers for Progressive Supranuclear Palsy Classification: A Large Multicohort International Study”, опубликованной в Radiology в 2026 году (doi: 10.1148/radiol.251394). При возникновении вопросов свяжитесь с ответственным автором рукописи.",
             errors: {
             var1: "Ошибка: Возраст должен быть в пределах от 40 до 100.",
             var2: "Ошибка: Пол должен быть 0 (Женщина) или 1 (Мужчина).",
@@ -345,6 +381,8 @@ function Calcola() {
             button: "حساب احتمال الشلل فوق النووي التدريجي",
             dmpi: "Dual-line midbrain PSP index (DMPI) =",
             result: "احتمال الإصابة بالشلل فوق النووي التقدمي بدلاً من المتلازمات التنكسية الأخرى هو",
+            info_title: "معلومات",
+            info_text: "جميع المعلومات متاحة في المخطوطة “Planimetric and Linear MRI Markers for Progressive Supranuclear Palsy Classification: A Large Multicohort International Study”، المنشورة في مجلة Radiology عام 2026 (doi: 10.1148/radiol.251394). في حال وجود أي استفسارات، يُرجى التواصل مع المؤلف المسؤول عن المراسلات في المخطوطة.",
             errors: {
             var1: "خطأ: يجب أن يكون العمر بين 40 و 100.",
             var2: "خطأ: يجب أن يكون الجنس 0 (أنثى) أو 1 (ذكر).",
@@ -369,9 +407,24 @@ function changeLanguage() {
         document.getElementById("label_var3").textContent = translations[selectedLang].var3 + ":";
         document.getElementById("label_var4").textContent = translations[selectedLang].var4 + ":";
         document.getElementById("button").textContent = translations[selectedLang].button;
+
+            // Aggiorna anche il box informazioni
+        document.getElementById("info-title").textContent = translations[selectedLang].info_title;
+        document.getElementById("info-text").textContent = translations[selectedLang].info_text;
     }
 }
 
+function openInfoBox() {
+    document.getElementById("info-overlay").style.display = "flex";
+}
+
+function closeInfoBox(event) {
+    // Se clicchi sulla X oppure sullo sfondo scuro, chiude il box
+    if (!event || event.target.id === "info-overlay" || event.target.id === "info-close") {
+        document.getElementById("info-overlay").style.display = "none";
+    }
+}
+    
 // Event Listeners
 document.getElementById("language-selector").addEventListener("change", changeLanguage);
 document.getElementById("language-selector").addEventListener("change", adjustImagePosition);
@@ -387,7 +440,10 @@ function adjustImagePosition() {
 }
     
 // Run on load
-window.onload = adjustImagePosition;
+window.onload = function() {
+    adjustImagePosition();
+    changeLanguage();
+};
 window.onresize = adjustImagePosition;
 </script>
 
@@ -504,7 +560,94 @@ window.onresize = adjustImagePosition;
             height: auto;
         }
 
-  
+
+/* Info button in alto a destra */
+#info-button {
+    position: fixed;
+    top: 12px;
+    right: 12px;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 2px solid #000000;
+    background-color: white;
+    color: black;
+    font-size: 22px;
+    font-weight: bold;
+    font-family: serif;
+    cursor: pointer;
+    z-index: 1000;
+    line-height: 28px;
+    text-align: center;
+}
+
+/* Sfondo semitrasparente */
+#info-overlay {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.35);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Box bianco */
+#info-box {
+    background-color: white;
+    color: black;
+    max-width: 520px;
+    width: 100%;
+    border-radius: 10px;
+    border: 2px solid #000000;
+    padding: 24px;
+    position: relative;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+/* Bottone X */
+#info-close {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    border: none;
+    background: none;
+    color: black;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Titolo del box */
+#info-title {
+    margin-top: 0;
+    margin-right: 25px;
+}
+
+/* Su schermi piccoli */
+@media screen and (max-width: 600px) {
+    #info-button {
+        top: 8px;
+        right: 8px;
+        width: 32px;
+        height: 32px;
+        font-size: 20px;
+    }
+
+    #info-box {
+        max-width: 92%;
+        padding: 20px;
+        font-size: 15px;
+    }
+}
+
+    
   @media screen and (max-width: 600px) {
     .form-group {
         justify-content: flex-start; /* Allinea tutto a sinistra */
