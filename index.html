@@ -561,11 +561,10 @@ window.onresize = adjustImagePosition;
         }
 
 
-/* Info button in alto a destra */
 #info-button {
     position: fixed;
     top: 12px;
-    right: 12px;
+    left: 520px;
     width: 34px;
     height: 34px;
     border-radius: 50%;
@@ -630,15 +629,16 @@ window.onresize = adjustImagePosition;
     margin-right: 25px;
 }
 
-/* Su schermi piccoli */
 @media screen and (max-width: 600px) {
     #info-button {
         top: 8px;
         right: 8px;
+        left: auto;
         width: 32px;
         height: 32px;
         font-size: 20px;
     }
+}
 
     #info-box {
         max-width: 92%;
