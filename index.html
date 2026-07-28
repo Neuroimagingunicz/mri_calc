@@ -56,11 +56,19 @@
     <div id="info-box">
       <button id="info-close" type="button" onclick="closeInfoBox()">×</button>
       <h3 id="info-title">Information</h3>
-      <p id="info-text">
-        This calculator estimates the probability of Progressive Supranuclear Palsy (PSP)
-        rather than other degenerative parkinsonian syndromes using age, sex, and MRI-based
-        A and B measures.
-      </p>
+      
+        <p id="info-text">
+        The calculator estimates the probability of having Progressive Supranuclear Palsy rather than other degenerative parkinsonian syndromes based on age, sex, and imaging linear measures.
+        </p>
+     
+        <p id="info-text2">
+        All information is available in the manuscript “Planimetric and Linear MRI Markers for Progressive Supranuclear Palsy Classification: A Large Multicohort International Study”, published in Radiology in 2026 (doi: 10.1148/radiol.251394). For any questions, please contact the corresponding author of the manuscript.
+        </p>
+        
+        <p id="info-text3">
+        As shown in the figure, the “A measure” is the midbrain width along a line traced to connect the anterior notch of the pontomesencephalic junction and the posterior commissure, while the “B measure” is the midbrain width along a line traced tangent to both the upper anterior border of the pons and the posterior commissure.
+        </p>
+        
     </div>
   </div>
       
@@ -202,7 +210,9 @@ function Calcola() {
             dmpi: "Dual-line midbrain PSP index (DMPI) =",
             result: "La probabilità di PSP piuttosto che altre sindromi parkinsoniane degenerative è",
             info_title: "Informazioni",
-            info_text: "Tutte le informazioni sono disponibili nel manoscritto “Planimetric and Linear MRI Markers for Progressive Supranuclear Palsy Classification: A Large Multicohort International Study”, pubblicato su Radiology nel 2026 (doi: 10.1148/radiol.251394). In caso di dubbi contattare il corresponding author del manoscritto.",
+            info_text: "Il calcolatore stima la probabilità di avere una paralisi sopranucleare progressiva piuttosto che altre sindromi parkinsoniane degenerative, sulla base dell’età, del sesso e di misure lineari di imaging.",
+            info_text2: "Tutte le informazioni sono disponibili nel manoscritto “Planimetric and Linear MRI Markers for Progressive Supranuclear Palsy Classification: A Large Multicohort International Study”, pubblicato su Radiology nel 2026 (doi: 10.1148/radiol.251394). In caso di dubbi contattare il corresponding author del manoscritto.",
+            info_text3: "Come mostrato nella figura, la “misura A” corrisponde alla larghezza del mesencefalo lungo una linea tracciata per collegare l’incisura anteriore della giunzione ponto-mesencefalica e la commissura posteriore, mentre la “misura B” corrisponde alla larghezza del mesencefalo lungo una linea tracciata tangenzialmente sia al margine antero-superiore del ponte sia alla commissura posteriore.",
             errors: {
             var1: "Errore: L'età deve essere compresa tra 40 e 100.",
             var2: "Errore: Il sesso deve essere 0 (Femmina) o 1 (Maschio).",
@@ -224,7 +234,9 @@ function Calcola() {
             dmpi: "Dual-line midbrain PSP index (DMPI) =",
             result: "The probability for PSP rather than other degenerative parkinsonian syndromes is",
             info_title: "Information",
-            info_text: "All information is available in the manuscript “Planimetric and Linear MRI Markers for Progressive Supranuclear Palsy Classification: A Large Multicohort International Study”, published in Radiology in 2026 (doi: 10.1148/radiol.251394). For any questions, please contact the corresponding author of the manuscript.",
+            info_text: "The calculator estimates the probability of having Progressive Supranuclear Palsy rather than other degenerative parkinsonian syndromes based on age, sex, and imaging linear measures.",
+            info_text2: "All information is available in the manuscript “Planimetric and Linear MRI Markers for Progressive Supranuclear Palsy Classification: A Large Multicohort International Study”, published in Radiology in 2026 (doi: 10.1148/radiol.251394). For any questions, please contact the corresponding author of the manuscript.",
+            info_text3: "As shown in the figure, the “A measure” is the midbrain width along a line traced to connect the anterior notch of the pontomesencephalic junction and the posterior commissure, while the “B measure” is the midbrain width along a line traced tangent to both the upper anterior border of the pons and the posterior commissure.",
             errors: {
             var1: "Error: Age must be between 40 and 100.",
             var2: "Error: Sex must be either 0 (Female) or 1 (Male).",
@@ -247,7 +259,9 @@ function Calcola() {
             dmpi: "Dual-line midbrain PSP index (DMPI) =",
             result: "La probabilidad de PSP en lugar de otros síndromes parkinsonianos degenerativos es",
             info_title: "Información",
-            info_text: "Toda la información está disponible en el manuscrito “Planimetric and Linear MRI Markers for Progressive Supranuclear Palsy Classification: A Large Multicohort International Study”, publicado en Radiology en 2026 (doi: 10.1148/radiol.251394). En caso de dudas, contacte con el autor de correspondencia del manuscrito.",
+            info_text: "La calculadora estima la probabilidad de padecer parálisis supranuclear progresiva en lugar de otros síndromes parkinsonianos degenerativos, basándose en la edad, el sexo y medidas lineales de imagen.",
+            info_text2: "Toda la información está disponible en el manuscrito “Planimetric and Linear MRI Markers for Progressive Supranuclear Palsy Classification: A Large Multicohort International Study”, publicado en Radiology en 2026 (doi: 10.1148/radiol.251394). En caso de dudas, contacte con el autor de correspondencia del manuscrito.",
+            info_text3: "Como se muestra en la figura, la “medida A” corresponde a la anchura del mesencéfalo a lo largo de una línea trazada para conectar la escotadura anterior de la unión pontomesencefálica con la comisura posterior, mientras que la “medida B” corresponde a la anchura del mesencéfalo a lo largo de una línea trazada tangente tanto al borde anterosuperior de la protuberancia como a la comisura posterior.",
             errors: {
             var1: "Error: La edad debe estar entre 40 y 100.",
             var2: "Error: El sexo debe ser 0 (Mujer) o 1 (Hombre).",
@@ -270,7 +284,9 @@ function Calcola() {
             dmpi: "Dual-line midbrain PSP index (DMPI) =",
             result: "La probabilité de PSP plutôt que d'autres syndromes parkinsoniens dégénératifs est",
             info_title: "Informations",
-            info_text: "Toutes les informations sont disponibles dans le manuscrit “Planimetric and Linear MRI Markers for Progressive Supranuclear Palsy Classification: A Large Multicohort International Study”, publié dans Radiology en 2026 (doi: 10.1148/radiol.251394). En cas de doute, veuillez contacter l’auteur correspondant du manuscrit.",
+            info_text: "Le calculateur estime la probabilité d’être atteint de paralysie supranucléaire progressive plutôt que d’autres syndromes parkinsoniens dégénératifs, sur la base de l’âge, du sexe et de mesures linéaires d’imagerie.",
+            info_text2: "Toutes les informations sont disponibles dans le manuscrit “Planimetric and Linear MRI Markers for Progressive Supranuclear Palsy Classification: A Large Multicohort International Study”, publié dans Radiology en 2026 (doi: 10.1148/radiol.251394). En cas de doute, veuillez contacter l’auteur correspondant du manuscrit.",
+            info_text3: "Comme illustré dans la figure, la « mesure A » correspond à la largeur du mésencéphale le long d’une ligne tracée pour relier l’encoche antérieure de la jonction ponto-mésencéphalique à la commissure postérieure, tandis que la « mesure B » correspond à la largeur du mésencéphale le long d’une ligne tracée tangentiellement à la fois au bord antéro-supérieur du pont et à la commissure postérieure.",
             errors: {
             var1: "Erreur : L'âge doit être compris entre 40 et 100.",
             var2: "Erreur : Le sexe doit être 0 (Femme) ou 1 (Homme).",
@@ -293,7 +309,9 @@ function Calcola() {
             dmpi: "Dual-line midbrain PSP index (DMPI) =",
             result: "Die Wahrscheinlichkeit für PSP anstelle anderer degenerativer parkinsonischer Syndrome beträgt",
             info_title: "Informationen",
-            info_text: "Alle Informationen sind im Manuskript “Planimetric and Linear MRI Markers for Progressive Supranuclear Palsy Classification: A Large Multicohort International Study” verfügbar, das 2026 in Radiology veröffentlicht wurde (doi: 10.1148/radiol.251394). Bei Fragen wenden Sie sich bitte an den korrespondierenden Autor des Manuskripts.",
+            info_text: "Der Rechner schätzt auf der Grundlage von Alter, Geschlecht und linearen bildgebenden Messwerten die Wahrscheinlichkeit, an einer progressiven supranukleären Blickparese statt an einem anderen degenerativen Parkinson-Syndrom zu leiden.",
+            info_text2: "Alle Informationen sind im Manuskript “Planimetric and Linear MRI Markers for Progressive Supranuclear Palsy Classification: A Large Multicohort International Study” verfügbar, das 2026 in Radiology veröffentlicht wurde (doi: 10.1148/radiol.251394). Bei Fragen wenden Sie sich bitte an den korrespondierenden Autor des Manuskripts.",
+            info_text3: "Wie in der Abbildung dargestellt, entspricht das „A-Maß“ der Breite des Mittelhirns entlang einer Linie, die die vordere Kerbe des ponto-mesenzephalen Übergangs mit der hinteren Kommissur verbindet. Das „B-Maß“ entspricht dagegen der Breite des Mittelhirns entlang einer Linie, die sowohl den oberen vorderen Rand der Brücke als auch die hintere Kommissur tangiert",
             errors: {
             var1: "Fehler: Das Alter muss zwischen 40 und 100 liegen.",
             var2: "Fehler: Das Geschlecht muss entweder 0 (Weiblich) oder 1 (Männlich) sein.",
@@ -315,7 +333,9 @@ function Calcola() {
             dmpi: "Dual-line midbrain PSP index (DMPI) =",
             result: "进行性核上性麻痹而非其他退行性帕金森综合征的概率为",
             info_title: "信息",
-            info_text: "所有信息均可在手稿“Planimetric and Linear MRI Markers for Progressive Supranuclear Palsy Classification: A Large Multicohort International Study”中找到，该文于2026年发表于 Radiology（doi: 10.1148/radiol.251394）。如有疑问，请联系该手稿的通讯作者。",
+            info_text: "该计算器根据年龄、性别和影像学线性测量指标，估算患有进行性核上性麻痹而非其他退行性帕金森综合征的概率。",
+            info_text2: "所有信息均可在手稿“Planimetric and Linear MRI Markers for Progressive Supranuclear Palsy Classification: A Large Multicohort International Study”中找到，该文于2026年发表于 Radiology（doi: 10.1148/radiol.251394）。如有疑问，请联系该手稿的通讯作者。",
+            info_text3: "如图所示，“A 测量”是沿一条连接脑桥-中脑交界处前方切迹与后连合的直线测得的中脑宽度，而“B 测量”是沿一条同时与脑桥前上缘和后连合相切的直线测得的中脑宽度。",
             errors: {
             var1: "错误: 年龄必须在 40 到 100 之间。",
             var2: "错误: 性别必须是 0（女性）或 1（男性）。",
@@ -337,7 +357,9 @@ function Calcola() {
             dmpi: "Dual-line midbrain PSP index (DMPI) =",
             result: "他の変性性パーキンソン症候群ではなく進行性核上性麻痺の確率は",
             info_title: "情報",
-            info_text: "すべての情報は、2026年に Radiology に掲載された論文 “Planimetric and Linear MRI Markers for Progressive Supranuclear Palsy Classification: A Large Multicohort International Study”（doi: 10.1148/radiol.251394）に記載されています。ご不明な点がある場合は、論文の責任著者にお問い合わせください。",
+            info_text: "この計算機は、年齢、性別、および画像の線形計測値に基づいて、他の変性性パーキンソン症候群ではなく進行性核上性麻痺である確率を推定します。",
+            info_text2: "すべての情報は、2026年に Radiology に掲載された論文 “Planimetric and Linear MRI Markers for Progressive Supranuclear Palsy Classification: A Large Multicohort International Study”（doi: 10.1148/radiol.251394）に記載されています。ご不明な点がある場合は、論文の責任著者にお問い合わせください。",
+            info_text3: "図に示すように、「A 測定」は、橋中脳接合部の前方切痕と後交連を結ぶように引いた線に沿って測定した中脳の幅です。一方、「B 測定」は、橋の前上縁と後交連の両方に接するように引いた線に沿って測定した中脳の幅です。",
             errors: {
             var1: "エラー: 年齢は 40 から 100 の間でなければなりません。",
             var2: "エラー: 性別は 0（女性）または 1（男性）でなければなりません。",
@@ -360,7 +382,9 @@ function Calcola() {
             dmpi: "Dual-line midbrain PSP index (DMPI) =",
             result: "Вероятность ПСП по сравнению с другими дегенеративными паркинсоническими синдромами составляет",
             info_title: "Информация",
-            info_text: "Вся информация доступна в рукописи “Planimetric and Linear MRI Markers for Progressive Supranuclear Palsy Classification: A Large Multicohort International Study”, опубликованной в Radiology в 2026 году (doi: 10.1148/radiol.251394). При возникновении вопросов свяжитесь с ответственным автором рукописи.",
+            info_text: "Калькулятор оценивает вероятность наличия прогрессирующего надъядерного паралича, а не других дегенеративных паркинсонических синдромов, на основании возраста, пола и линейных измерений по данным визуализации.",
+            info_text2: "Вся информация доступна в рукописи “Planimetric and Linear MRI Markers for Progressive Supranuclear Palsy Classification: A Large Multicohort International Study”, опубликованной в Radiology в 2026 году (doi: 10.1148/radiol.251394). При возникновении вопросов свяжитесь с ответственным автором рукописи.",
+            info_text3: "Как показано на рисунке, «измерение A» представляет собой ширину среднего мозга вдоль линии, проведённой между передней выемкой понтомезэнцефального соединения и задней спайкой, тогда как «измерение B» представляет собой ширину среднего мозга вдоль линии, проведённой по касательной одновременно к верхнему переднему краю моста и задней спайке.",
             errors: {
             var1: "Ошибка: Возраст должен быть в пределах от 40 до 100.",
             var2: "Ошибка: Пол должен быть 0 (Женщина) или 1 (Мужчина).",
@@ -382,7 +406,9 @@ function Calcola() {
             dmpi: "Dual-line midbrain PSP index (DMPI) =",
             result: "احتمال الإصابة بالشلل فوق النووي التقدمي بدلاً من المتلازمات التنكسية الأخرى هو",
             info_title: "معلومات",
-            info_text: "جميع المعلومات متاحة في المخطوطة “Planimetric and Linear MRI Markers for Progressive Supranuclear Palsy Classification: A Large Multicohort International Study”، المنشورة في مجلة Radiology عام 2026 (doi: 10.1148/radiol.251394). في حال وجود أي استفسارات، يُرجى التواصل مع المؤلف المسؤول عن المراسلات في المخطوطة.",
+            info_text: "تقدّر الحاسبة احتمال الإصابة بالشلل فوق النووي التقدمي بدلاً من المتلازمات الباركنسونية التنكسية الأخرى، استنادًا إلى العمر والجنس والقياسات الخطية المستندة إلى التصوير.",
+            info_text2: "جميع المعلومات متاحة في المخطوطة “Planimetric and Linear MRI Markers for Progressive Supranuclear Palsy Classification: A Large Multicohort International Study”، المنشورة في مجلة Radiology عام 2026 (doi: 10.1148/radiol.251394). في حال وجود أي استفسارات، يُرجى التواصل مع المؤلف المسؤول عن المراسلات في المخطوطة.",
+            info_text3: "كما هو موضح في الشكل، يمثّل «القياس A» عرض الدماغ المتوسط على طول خط مرسوم لربط الثَّلْمة الأمامية للوصلة الجسرية المتوسطة بالملتقى الخلفي، بينما يمثّل «القياس B» عرض الدماغ المتوسط على طول خط مرسوم بحيث يكون مماسًا لكلٍّ من الحافة الأمامية العلوية للجسر والملتقى الخلفي.",
             errors: {
             var1: "خطأ: يجب أن يكون العمر بين 40 و 100.",
             var2: "خطأ: يجب أن يكون الجنس 0 (أنثى) أو 1 (ذكر).",
@@ -411,6 +437,8 @@ function changeLanguage() {
             // Aggiorna anche il box informazioni
         document.getElementById("info-title").textContent = translations[selectedLang].info_title;
         document.getElementById("info-text").textContent = translations[selectedLang].info_text;
+        document.getElementById("info-text2").textContent = translations[selectedLang].info_text2;
+        document.getElementById("info-text3").textContent = translations[selectedLang].info_text3;
     }
 }
 
